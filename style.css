@@ -1509,6 +1509,8 @@ a span .btn3{
 
 .cust{
   padding: 50px;
+  background: transparent;
+  background-color: transparent;
 }
 
 element.style {
@@ -1547,6 +1549,8 @@ div .slider2{
   height: 35em;
   display: flex;
   align-items: center;
+  background: transparent;
+  background-color: transparent;
 }
 
 .swiper-slide {
