@@ -1,0 +1,870 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxxcam</title>
+    <link rel="icon" type="image/png" href="images\Maxlogo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+   
+</head>
+<body>
+   <nav class="header" id="mainNavbar">
+    <div>
+      <a class="navbar-brand" href="#">
+        <img src="images\Maxlogo.png" alt="Logo" width="100" height="100" class="d-inline-block align-text-top">
+    </a></div>
+    <div class="nav-links">
+      <a href=\maxxcam\index.html>Home</a>
+      <div class="product-menu">
+          <a href=\maxxcam\Products\product.html>Product</a>
+          <div class="dropdown">
+              <a href="\maxxcam\Products\2dcad.html">2D CAD</a>
+              <a href="\maxxcam\Products\profilecam.html">Profile CAM</a>
+              <a href="\maxxcam\Products\punchcam.html">Punch CAM</a>
+              <a href="\maxxcam\Products\auto.html">Auto Nesting</a>
+              <a href="\maxxcam\Products\punchshear.html">Punch/Shear CAM</a>
+              <a href="\maxxcam\Products\quote.html">Quote Module</a>
+          </div>
+      </div>
+      <a href="\maxxcam\partners\partners.html" style="margin-left: -105px;">Partners</a>
+      <a href=\maxxcam\Products\Contact\contact..html>Contact</a>
+      <a href=\maxxcam\Products\Contact\Resellers\resellers.html>Resellers</a>
+  </div>
+
+ 
+      <button class="support-button">Support</button>
+      <div class="sdbar">
+        <button type="button" class="btn-sdbar" onclick="toggleSidebar()">☰</button>
+      </div></nav>
+
+      <div class="sidebar" id="sidebar">
+        <span class="close-btn" onclick="toggleSidebar()">✖</span>
+        <img src="\maxxcam\images\Maxlogo.png" alt="MaxxCAM Logo" width="50">
+        <hr>
+        <ul>
+            <li><a href="#" class="products-lst-odr"><i class="fab fa-twitter"></i> Twitter</a></li>
+             <li><a href="#" class="products-lst-odr"><i class="fab fa-google-plus-g"></i> Google Plus</a></li>
+              <li><a href="#" class="products-lst-odr"><i class="fab fa-facebook"></i> Facebook</a></li>
+              <li><a href="#" class="products-lst-odr"><i class="fab fa-vimeo"></i> Vimeo</a></li>
+              <li><a href="#" class="products-lst-odr"><i class="fab fa-pinterest"></i> Pinterest</a></li>
+            </ul>
+      </div>
+      
+      <script>
+        function toggleSidebar() {
+            let sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("active");
+        }
+      </script>
+
+<!-- Secondary Navbar (Appears when scrolling up) -->
+<div class="secondary-navbar" id="secondaryNavbar">
+  Quick Navigation | <a href="products.html" style="color: white;">Products</a> | 
+  <a href="partners.html" style="color: white;">Partners</a> | 
+  <a href="contact.html" style="color: white;">Contact</a>
+</div>
+
+<script>
+  let lastScrollTop = 0;
+  let secondaryNavbar = document.getElementById("secondaryNavbar");
+  let mainNavbar = document.getElementById("mainNavbar");
+
+  window.addEventListener("scroll", function() {
+      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      let mainNavbarHeight = mainNavbar.offsetHeight;
+      
+      if (currentScroll < lastScrollTop && currentScroll > mainNavbarHeight) {
+          // Show secondary navbar when scrolling up and past the main navbar height
+          secondaryNavbar.style.transform = "translateY(0)";
+      } else {
+          // Hide secondary navbar when scrolling down or reaching the main navbar
+          secondaryNavbar.style.transform = "translateY(-100%)";
+      }
+
+      lastScrollTop = currentScroll;
+  });
+
+</script>
+
+       
+       <div class="carousel">
+        <!-- list item -->
+        <div class="list">
+            <div class="item">
+                <img src="images\nesting1.jpg" style="filter: blur(3px);">
+                <div class="content">
+                    
+                    <div class="title">MAXXCAM</div>
+                    <div class="topic">Solutions</div>
+                    <div class="des">
+                        <!-- lorem 50 -->
+                        MaxxCAM revolutionizes sheet metal CAD/CAM, optimizing laser, plasma, and water-jet cutting machines with its advanced Cut Module. Tailored for profile-cutting machines, it excels with support for punch-laser hybrids. Automatic lead-in and escape geometry assignment based on part size and material thickness ensures optimal cut conditions.</div>
+                    <div class="buttons">
+                      <button>SEE MORE</button>
+                      <button>CONTACT US</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images\laser4.jpg" style="filter: blur(3px);">
+                <div class="content">
+                    
+                    <div class="title">MAXXCAM</div>
+                    <div class="topic">Solutions</div>
+                    <div class="des">
+                      MaxxCAM revolutionizes sheet metal CAD/CAM, optimizing laser, plasma, and water-jet cutting machines with its advanced Cut Module. Tailored for profile-cutting machines, it excels with support for punch-laser hybrids. Automatic lead-in and escape geometry assignment based on part size and material thickness ensures optimal cut conditions.</div>
+                    <div class="buttons">
+                      <button>SEE MORE</button>
+                      <button>CONTACT US</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images\pipe-nesting2.jpg" style="filter: blur(1px);">
+                <div class="content">
+                    
+                    <div class="title">MAXXCAM</div>
+                    <div class="topic">Solutions</div>
+                    <div class="des">
+                      MaxxCAM revolutionizes sheet metal CAD/CAM, optimizing laser, plasma, and water-jet cutting machines with its advanced Cut Module. Tailored for profile-cutting machines, it excels with support for punch-laser hybrids. Automatic lead-in and escape geometry assignment based on part size and material thickness ensures optimal cut conditions.</div>
+                    <div class="buttons">
+                      <button>SEE MORE</button>
+                      <button>CONTACT US</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images\composite cutting.png" style="filter: blur(3px);">
+                <div class="content">
+                    
+                    <div class="title">MAXXCAM</div>
+                    <div class="topic">Solutions</div>
+                    <div class="des">
+                      MaxxCAM revolutionizes sheet metal CAD/CAM, optimizing laser, plasma, and water-jet cutting machines with its advanced Cut Module. Tailored for profile-cutting machines, it excels with support for punch-laser hybrids. Automatic lead-in and escape geometry assignment based on part size and material thickness ensures optimal cut conditions.</div>
+                    <div class="buttons">
+                        <button>SEE MORE</button>
+                        <button>CONTACT US</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- list thumnail 457101213-->
+        <div class="thumbnail">
+            <div class="item">
+                <img src="images\nesting1.jpg">
+                <div class="overlay-text">Cutting Machine</div>
+                <div class="content">
+                    <div class="title">
+                        
+                    </div>
+                    <div class="description">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images\laser4.jpg">
+                <div class="overlay-text">Laser Cutting</div>
+                <div class="content">
+                    <div class="title">
+                      
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item">
+                <img src="images\pipe-nesting2.jpg">
+                <div class="overlay-text">Cutting Tube</div>
+                <div class="content">
+                    <div class="title">
+                       
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item">
+                <img src="images\composite cutting.png">
+                <div class="overlay-text">CNC Lathe</div>
+                <div class="content">
+                    <div class="title">
+                      
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- next prev -->
+
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <!-- time running -->
+        <div class="time"></div>
+    </div>
+    <script src="app.js"></script>
+
+    <!-- Bootstrap JS (Including Popper.js) -->
+<!--box2---------------------------------------------------------------------------------------------------------------->
+    <div class="container12">
+      <!-- Left Column (Text) -->
+      <div class="left-column">
+          <div>
+            <h2 style="text-align: left; padding-bottom: 20px;">
+              <span>MaxxCAM: Laser | Punching |<br style="text-align: left;"> Nesting Software</span>
+            </h2>
+                <p style="text-align: left;"></p>
+                <p style="text-align: left;">MaxxCAM revolutionizes sheet metal CAD/CAM, optimizing laser, plasma, and water-jet cutting machines with its advanced Cut Module. Tailored for profile-cutting machines, it excels with support for punch-laser hybrids. Automatic lead-in and escape geometry assignment based on part size and material thickness ensures optimal cut conditions.</p>
+                <span class="sprt"><button type="button" class="btn2"><a href="D:\maxxcam\partners\supported machines\supported machines.html"> Supported Machines</a></button></span>
+              <a itemprop="url" href="https://j1k.2aa.myftpupload.com/contact-page/" target="_self" style="border-color: #cccccc;margin: 9px 18px 9px 0;" class="edgtf-btn edgtf-btn-medium edgtf-btn-outline edgtf-btn-custom-hover-bg edgtf-btn-custom-border-hover" data-hover-bg-color="#333333" data-hover-border-color="#333333">
+                <span><button type="button" class="btn3" style="font-weight: normal; width: 150px;">Contact Us</button></span>
+              </a>
+              </div>
+      </div>
+
+      <!-- Right Column (Image) -->
+      <div class="right-column">
+        <a href="#" class="image_grid"><img loading="lazy" decoding="async" src="images\sceen-laptop.png"></a>
+      </div></div>
+<!------------------------------------------------------------------------------------------------------------------------------------->
+
+
+<div class="vc_row wpb_row vc_row-fluid edgtf-content-aligment-center"><div class="wpb_column vc_column_container vc_col-sm-12 vc_hidden-xs"><div class="vc_column-inner vc_custom_1736316464150"><div class="wpb_wrapper"><div class="edgtf-parallax-holder edgtf-vertical-middle-align edgtf-disabled-parallax-on-touch" data-parallax-speed="1" style="background-image: url(&quot;https://j1k2aa.p3cdn1.secureserver.net/wp-content/uploads/2025/01/dreamstime_l_317669376-1-1.webp?time=1741759135&quot;); min-height: 850px; height: 850px;margin-top: 40px; margin-bottom: 80px; background-position: 50% -66px;">
+	<div class="edgtf-parallax-inner">
+		<div class="vc_empty_space  vc_custom_1735557979612" style="height: 650px"><span class="vc_empty_space_inner"></span></div><div class="edgtf-video-button-holder">
+	<div class="edgtf-video-button-image">
+		<img loading="lazy" decoding="async" width="1095" height="546" src="https://j1k2aa.p3cdn1.secureserver.net/wp-content/uploads/2017/01/h2-img-3.jpg?time=1741759135" class="attachment-full size-full" alt="a" srcset="https://j1k2aa.p3cdn1.secureserver.net/wp-content/uploads/2017/01/h2-img-3.jpg 1095w, https://j1k2aa.p3cdn1.secureserver.net/wp-content/uploads/2017/01/h2-img-3-600x299.jpg 600w, https://j1k2aa.p3cdn1.secureserver.net/wp-content/uploads/2017/01/h2-img-3-300x150.jpg 300w, https://j1k2aa.p3cdn1.secureserver.net/wp-content/uploads/2017/01/h2-img-3-1024x511.jpg 1024w, https://j1k2aa.p3cdn1.secureserver.net/wp-content/uploads/2017/01/h2-img-3-768x383.jpg 768w" sizes="(max-width: 1095px) 100vw, 1095px">	</div>
+			<a class="edgtf-video-button-play-image edgtf-vb-has-hover-image" href="https://vimeo.com/113864519" target="_self" data-rel="prettyPhoto[video_button_pretty_photo_555]">
+			<span class="edgtf-video-button-play-inner">
+				<img loading="lazy" decoding="async" width="108" height="108" src="https://j1k2aa.p3cdn1.secureserver.net/wp-content/uploads/2017/01/h2-button-1.png?time=1741759135" class="attachment-full size-full" alt="a" srcset="https://j1k2aa.p3cdn1.secureserver.net/wp-content/uploads/2017/01/h2-button-1.png 108w, https://j1k2aa.p3cdn1.secureserver.net/wp-content/uploads/2017/01/h2-button-1-100x100.png 100w" sizes="(max-width: 108px) 100vw, 108px">									<img loading="lazy" decoding="async" width="108" height="108" src="https://j1k2aa.p3cdn1.secureserver.net/wp-content/uploads/2017/01/h2-button-1.png?time=1741759135" class="attachment-full size-full" alt="a" srcset="https://j1k2aa.p3cdn1.secureserver.net/wp-content/uploads/2017/01/h2-button-1.png 108w, https://j1k2aa.p3cdn1.secureserver.net/wp-content/uploads/2017/01/h2-button-1-100x100.png 100w" sizes="(max-width: 108px) 100vw, 108px">							</span>
+		</a>
+	</div>	</div>
+</div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-12 vc_hidden-xs"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div></div></div></div></div>
+  <!-- Box3--------------Our Products ------------------------------------------------------------------------------------------------>
+  <section class="products-section container mt-5">
+    <h2>Our Products</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="product-card p-4 text-center">
+                <i class="fas fa-industry product-icon"></i>
+                <h3>PROFILE CAM</h3>
+                <p>Maximise the potential of laser, plasma, oxy-fuel, and water-jet cutting machines with MaxxCAM’s cutting module.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card p-4 text-center">
+                <i class="fas fa-tools product-icon"></i>
+                <h3>PUNCH CAM</h3>
+                <p>The MaxxCAM tooling engine provides the best automated and interactive capabilities available in the industry.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="product-card p-4 text-center">
+                <i class="fas fa-drafting-compass product-icon"></i>
+                <h3>2D CAD</h3>
+                <p>The MaxxCAM 2D CAD system uses a 2D parametric constraint kernel and for advanced part of the creation.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+          <div class="product-card p-4 text-center">
+            <i class="fas fa-layer-group product-icon"></i>
+              <h3>AUTO NESTING</h3>
+              <p>MaxxCAM’ s irregular nesting engine allows nesting on multiple sheets and sizes simultaneously, resulting in stunning results</p>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="product-card p-4 text-center">
+              <i class="fas fa-cogs product-icon"></i>
+              <h3>PUNCH/SHEAR CAM</h3>
+              <p>The MaxxCAM tooling engine provides the best automated and interactive capabilities available in the industry.</p>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="product-card p-4 text-center">
+            <i class="fas fa-cut product-icon"></i>
+              <h3>COMPOSITE CUTTING</h3>
+              <p>Composite cutting and knife cutting are advanced techniques used to achieve precise, smooth, and efficient results in sheet metal fabrication.</p>
+          </div>
+      </div>
+  </div>
+</section>
+<!------------------------------------------------------------------------------------------------------------------------------------------------>
+
+
+
+<section class="image-slider-section">
+  <h2 style="margin-bottom: 50px;">Our Manufacturing Process</h2>
+  <button class="custom-prev"><i class="fas fa-chevron-left"></i></button>
+  <div class="image-slider">
+      <div><img src="\maxxcam\images\image1.webp" alt="Manufacturing Image"></div>
+      <div><img src="\maxxcam\images\image2.webp" alt="Manufacturing Image"></div>
+      <div><img src="\maxxcam\images\image3.webp" alt="Manufacturing Image"></div>
+      <div><img src="\maxxcam\images\image4.webp" alt="Manufacturing Image"></div>
+      <div><img src="\maxxcam\images\image5.jpg" alt="Manufacturing Image"></div>
+  </div>
+  <button class="custom-next"><i class="fas fa-chevron-right"></i></button>
+</section>
+
+<script>
+  $(document).ready(function(){
+      var slider = $('.image-slider');
+      slider.slick({
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          arrows: false,
+          responsive: [
+              {
+                  breakpoint: 1024,
+                  settings: {
+                      slidesToShow: 3
+                  }
+              },
+              {
+                  breakpoint: 768,
+                  settings: {
+                      slidesToShow: 2
+                  }
+              },
+              {
+                  breakpoint: 576,
+                  settings: {
+                      slidesToShow: 1
+                  }
+              }
+          ]
+      });
+      $('.custom-prev').click(function() {
+          slider.slick('slickPrev');
+      });
+      $('.custom-next').click(function() {
+          slider.slick('slickNext');
+      });
+  });
+</script>
+  <!--Customer stories------------------------------------------------------------------------------------------------------------->
+
+       <div class="cust"><h2 class="cust-st" style="text-align: center;">Customer Stories</h2><p style="text-align: center;">See for yourself why many companies have chosen MaxxCAM</p></div>
+      <div class="slider2"><section class="swiper mySwiper">
+
+        <div class="swiper-wrapper">
+    
+          <div class="card swiper-slide">
+            <div class="card__image">
+              <img src="images\Tonny Andersen.jpg" alt="card image">
+            </div>
+    
+            <div class="card__content">
+              <span class="card__title">Tonny Andersen</span>
+              <span class="card__name">Soby A/S</span>
+              <p class="card__text">Here at Søby AS, we use MaxxCAM for our Pullmax turret punching machines and our Bystronic lasers. For us, it has been a great change; we save a lot of time with nesting and have significantly better utilization of sheets than we had before.</p>
+              <button class="card__btn">View More</button>
+            </div>
+          </div>
+    
+          <div class="card swiper-slide">
+            <div class="card__image">
+              <img src="images\NQ Sheetmetal.jpg" alt="card image">
+            </div>
+    
+            <div class="card__content">
+              <span class="card__title">Jeremy Steel </span>
+              <span class="card__name">NQ Sheetmetal Pvt Ltd</span>
+              <p class="card__text">We were searching for a CAD/CAM package that was both easy to learn and use for our new AMADA EMZ-3510 turret punch. After testing various software options, we found that MaxxCAM was the perfect fit for our business due to its intuitive interface and logical workflow.</p>
+              <button class="card__btn">View More</button>
+            </div>
+          </div>
+    
+          <div class="card swiper-slide">
+            <div class="card__image">
+              <img src="images\Cosmin Cojocaru.jpg" alt="card image">
+            </div>
+    
+            <div class="card__content">
+              <span class="card__title">Cosmin Cojocaru</span>
+              <span class="card__name">SBS Kuhltechnik GmbH</span>
+              <p class="card__text">At SBS Kühltechnik GmbH, we have recently implemented a new Trumpf TruPunch 1000 (S19) to work alongside our existing Trumpf TC500R.
+                The new Trumpf TruPunch 1000 (S19) is equipped with advanced functions that have greatly improved our fabrication needs. We are using many different tool types, including wheel tools, forming tools, engraving tools, tapping tools, and more.</p>
+              <button class="card__btn">View More</button>
+            </div>
+          </div>
+    
+          <div class="card swiper-slide">
+            <div class="card__image">
+              <img src="images\Kim Jensen.jpg" alt="card image">
+            </div>
+    
+            <div class="card__content">
+              <span class="card__title">Kim Jensen</span>
+              <span class="card__name">Dan-doors A/S</span>
+              <p class="card__text">When we wanted to move from programming the same parts over and over again to building families of products that could be reused as parametric templates, we chose MaxxCAM. 
+
+                Building such a system is a significant task, and you need to carefully consider who can help with such a project. We chose MaxxCAM as our partner, and we certainly have no regrets.</p>
+              <button class="card__btn">View More</button>
+            </div>
+          </div>
+    
+        </div>
+      </section>
+    
+    <!-- Swiper JS -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+      <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 300,
+        modifier: 1,
+        slideShadows: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  </script>
+
+<a itemprop="url" href="https://j1k.2aa.myftpupload.com/customer-stories/" target="_self" class="edgtf-btn edgtf-btn-medium edgtf-btn-solid" id="view-btn">
+  <span class="edgtf-btn-text">View all MaxxCAM customer stories</span>
+  </a>
+      </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+<!--box4----------------------------------------------------------------------------------------------------------------------------------->
+    <div class="vc_row wpb_row vc_row-fluid vc_custom_1735556779947 vc_row-has-fill edgtf-content-aligment-center">
+        <div class="wpb_column vc_column_container vc_col-sm-12">
+            <div class="vc_column-inner"><div class="wpb_wrapper">
+                <div class="edgtf-row-grid-section"><div class="vc_row wpb_row vc_inner vc_row-fluid">
+                    <div class="wpb_column vc_column_container vc_col-sm-12">
+                        <div class="vc_column-inner"><div class="wpb_wrapper">
+                            <div class="edgtf-section-title-holder" style="padding: 0 25%">
+        <h2 class="edgtf-st-title" style="padding-top: 50px;">
+        <span class="sav_cal">Nesting Software Savings Calculator</span>
+    </h2>
+    </div>
+    <div class="vc_empty_space" style="height: 48px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_raw_code wpb_content_element wpb_raw_html">
+    <div class="wpb_wrapper">
+     
+
+<div class="saving-calculator-cont">
+<div class="saving-calculator-form">
+<!-- <h1>Savings Calculator</h1> -->
+
+<div class="section" id="currency-options">
+  <label><input type="radio" name="currency" value="USD" checked=""> USD ($)</label>
+  <label><input type="radio" name="currency" value="EURO"> EUR (€)</label>
+  <label><input type="radio" name="currency" value="POUND"> GBP (£)</label>
+</div>
+
+<div class="col-slider-sec">
+  <div class="section">
+    <h2>1. Material Efficiency</h2>
+    <div class="slider-container">
+      <label>Estimated annual material spend:
+        <span id="material-spend-value">£1,228,000</span></label>
+      <input type="range" id="material-spend" min="100000" max="10000000" step="1000" value="100000">
+    </div>
+    <div class="slider-container">
+      <label>Estimated percentage material saving:
+        <span id="material-saving-value">4</span><span>%</span></label>
+      <input type="range" id="material-saving" min="1" max="20" step="1" value="1">
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>2. Programming Time</h2>
+    <div class="slider-container">
+      <label>Programming hourly rate:
+        <span id="hourly-rate-value">£33</span></label>
+      <input type="range" id="hourly-rate" min="10" max="100" step="1" value="10">
+    </div>
+    <div class="slider-container">
+      <label>Estimated percentage saving of time:
+        <span id="time-saving-value">46</span><span>%</span></label>
+      <input type="range" id="time-saving" min="0" max="100" step="1" value="0">
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3. Machine Runtime</h2>
+    <div class="slider-container">
+      <label>Machine hourly rate:
+        <span id="machine-rate-value">£150</span></label>
+      <input type="range" id="machine-rate" min="20" max="500" step="1" value="20">
+    </div>
+    <div class="slider-container">
+      <label>Estimated percentage material saving:
+        <span id="runtime-saving-value">18</span><span>%</span></label>
+      <input type="range" id="runtime-saving" min="0" max="20" step="1" value="0">
+    </div>
+  </div>
+</div>
+
+<div class="section">
+    <a href="#calculator-result">
+  <button id="calculate-button">Calculate My Savings</button>
+        </a>
+</div>
+</div>
+
+
+<div class="section" id="results" style="display: flex;">
+  <h2>Calculations:</h2>
+  <div class="result">
+    Annual material saving: <span id="material-result">£49,120</span>
+    <span class="tooltip"><ion-icon name="information-circle-outline" role="img" class="md hydrated"></ion-icon><span class="tooltip-text">
+        <span id="tooltip-material-spend">£1,228,000</span>
+        *
+        <span id="tooltip-material-saving">4% </span></span></span>
+  </div>
+  <div class="result">
+    Annual programming time saving: <span id="time-result">£31,574.4</span>
+    <span class="tooltip"><ion-icon name="information-circle-outline" role="img" class="md hydrated"></ion-icon><span class="tooltip-text">((<span id="tooltip-hourly-rate">£33</span>
+        * 40 hours) * 52 weeks) *
+        <span id="tooltip-time-saving">46%</span></span></span>
+  </div>
+  <div class="result">
+    Annual machine runtime saving: <span id="runtime-result">£56,160</span>
+    <span class="tooltip"><ion-icon name="information-circle-outline" role="img" class="md hydrated"></ion-icon><span class="tooltip-text">((<span id="tooltip-machine-rate">£150</span>
+        * 40 hours) * 52 weeks) *
+        <span id="tooltip-runtime-saving">18%</span></span></span>
+  </div>
+  <div class="result">
+    Total ANNUAL saving: <span id="total-result">£136,854.4</span>
+  </div>
+  <button onclick="requestDemo()">
+    <a href="#">Request Demo or Quote</a>
+  </button>
+</div>
+</div>
+</div>
+
+<script>
+const materialSpend = document.getElementById("material-spend");
+const materialSaving = document.getElementById("material-saving");
+const hourlyRate = document.getElementById("hourly-rate");
+const timeSaving = document.getElementById("time-saving");
+const machineRate = document.getElementById("machine-rate");
+const runtimeSaving = document.getElementById("runtime-saving");
+const resultsSection = document.getElementById("results");
+const settingExplained = document.getElementById("calculator-setting-explained");
+const currencyOptions = document.querySelectorAll('input[name="currency"]');
+const calculateButton = document.getElementById("calculate-button");
+
+function calculateResults() {
+const materialSpendValue = parseFloat(materialSpend.value);
+const materialSavingValue = parseFloat(materialSaving.value) / 100;
+const hourlyRateValue = parseFloat(hourlyRate.value);
+const timeSavingValue = parseFloat(timeSaving.value) / 100;
+const machineRateValue = parseFloat(machineRate.value);
+const runtimeSavingValue = parseFloat(runtimeSaving.value) / 100;
+
+// Updating ToolTips
+document.getElementById("tooltip-material-spend").textContent =
+  formatCurrency(materialSpendValue);
+document.getElementById("tooltip-material-saving").textContent = `${
+  materialSavingValue * 100
+}% `;
+
+document.getElementById("tooltip-hourly-rate").textContent =
+  formatCurrency(hourlyRateValue);
+document.getElementById("tooltip-time-saving").textContent = `${
+  timeSavingValue * 100
+}%`;
+
+document.getElementById("tooltip-machine-rate").textContent =
+  formatCurrency(machineRateValue);
+document.getElementById("tooltip-runtime-saving").textContent = `${
+  runtimeSavingValue * 100
+}%`;
+
+const materialResult = materialSpendValue * materialSavingValue;
+const timeResult = hourlyRateValue * 40 * 52 * timeSavingValue;
+const runtimeResult = machineRateValue * 40 * 52 * runtimeSavingValue;
+const totalResult = materialResult + timeResult + runtimeResult;
+
+document.getElementById("material-result").innerText =
+  formatCurrency(materialResult);
+document.getElementById("time-result").innerText =
+  formatCurrency(timeResult);
+document.getElementById("runtime-result").innerText =
+  formatCurrency(runtimeResult);
+document.getElementById("total-result").innerText =
+  formatCurrency(totalResult);
+
+resultsSection.style.display = "flex";
+settingExplained.style.display = "none";
+}
+
+function formatCurrency(value) {
+const selectedCurrency = document.querySelector(
+  'input[name="currency"]:checked'
+).value;
+const symbols = { USD: "$", EURO: "€", POUND: "£" };
+return `${symbols[selectedCurrency]}${value.toLocaleString()}`;
+}
+
+function updateSliderValues() {
+document.getElementById("material-spend-value").innerText = formatCurrency(
+  parseFloat(materialSpend.value)
+);
+document.getElementById("material-saving-value").innerText =
+  materialSaving.value;
+document.getElementById("hourly-rate-value").innerText = formatCurrency(
+  parseFloat(hourlyRate.value)
+);
+document.getElementById("time-saving-value").innerText = timeSaving.value;
+document.getElementById("machine-rate-value").innerText = formatCurrency(
+  parseFloat(machineRate.value)
+);
+document.getElementById("runtime-saving-value").innerText =
+  runtimeSaving.value;
+}
+
+// function requestDemo() {
+//   alert("Request Demo or Quote feature coming soon!");
+// }
+
+// Event listeners
+materialSpend.addEventListener("input", updateSliderValues);
+materialSaving.addEventListener("input", updateSliderValues);
+hourlyRate.addEventListener("input", updateSliderValues);
+timeSaving.addEventListener("input", updateSliderValues);
+machineRate.addEventListener("input", updateSliderValues);
+runtimeSaving.addEventListener("input", updateSliderValues);
+
+currencyOptions.forEach((option) => {
+option.addEventListener("change", updateSliderValues);
+});
+
+calculateButton.addEventListener("click", () => {
+calculateResults();
+});
+
+resultsSection.style.display = "none";
+</script>
+
+<script>
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+  }
+  
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+  }
+  </script>         
+
+    </div>
+
+</div>
+</div></div></div></div></div></div></div></div>
+
+
+  <div class="section" id="results" style="display: none;">
+    <h2>Calculations:</h2>
+    <div class="result">
+      Annual material saving: <span id="material-result">$0</span>
+      <span class="tooltip"><ion-icon name="information-circle-outline" role="img" class="md hydrated"></ion-icon><span class="tooltip-text">
+          <span id="tooltip-material-spend">Estimated annual material spend</span>
+          *
+          <span id="tooltip-material-saving">Estimated percentage material saving</span></span></span>
+    </div>
+    <div class="result">
+      Annual programming time saving: <span id="time-result">$0</span>
+      <span class="tooltip"><ion-icon name="information-circle-outline" role="img" class="md hydrated"></ion-icon><span class="tooltip-text">((<span id="tooltip-hourly-rate">Programming hourly rate</span>
+          * 40 hours) * 52 weeks) *
+          <span id="tooltip-time-saving">Estimated percentage saving of time</span></span></span>
+    </div>
+    <div class="result">
+      Annual machine runtime saving: <span id="runtime-result">$0</span>
+      <span class="tooltip"><ion-icon name="information-circle-outline" role="img" class="md hydrated"></ion-icon><span class="tooltip-text">((<span id="tooltip-machine-rate">Machine hourly rate</span>
+          * 40 hours) * 52 weeks) *
+          <span id="tooltip-runtime-saving">Estimated percentage material saving</span></span></span>
+    </div>
+    <div class="result">
+      Total ANNUAL saving: <span id="total-result">$0</span>
+    </div>
+    <button onclick="requestDemo()">
+      <a href="#">Request Demo or Quote</a>
+    </button>
+  </div>
+</div>
+
+<!--Settings explained----------------------------------------------------------------------------------------------------------->
+<div class="saving-calculator-cont" id="setex" style="padding-top: 70px;">
+  <div class="saving-calculator-form">
+  <div id="calculator-setting-explained">
+    <h2>Settings explained:</h2>
+    <ul class="setex-li">
+      <li>
+        <strong class="setex-str">Material efficiency: </strong>Maxxcam's High Performance
+        Nesting can often yield double-digit savings. Select an annual
+        material spend followed by the percentage saving provided by your
+        Maxxcam nesting benchmark. Alternatively, select an estimation to see
+        possible savings.
+      </li>
+      <li>
+        <strong class="setex-str">Programming time: </strong>By automating processes such as CAD
+        import, automatic tooling and nesting programming time can often be
+        drastically reduced. This can free up staff for more proactive,
+        productive tasks. Figures based on 40 hour week. Multiply hourly rate
+        for multiple shifts.
+      </li>
+      <li>
+        <strong class="setex-str">Machine runtime: </strong>By using features such as common or
+        fly cutting machine runtime can often be significantly improved.
+        Maxxcam Expert can provide runtime estimation* alongside NC code giving
+        extra capacity with the same equipment. Figures based on 40 hour week.
+        Multiply hourly rate for multiple shifts.
+      </li>
+    </ul>
+  </div>
+  </div></div>
+
+
+<!--Contact us--------------------------------------------------------------------------------------------------------------------->
+
+<div class="banner">
+  <div class="banner-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy</div>
+  <button class="contact-button">Contact Us</button>
+</div>
+
+
+<!--Get in touch---------------------------------------------------------------------------------------------------------------->
+
+
+<div class="vc_row wpb_row vc_row-fluid vc_custom_1486134602613"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner vc_custom_1485338102956"><div class="wpb_wrapper"><div class="edgtf-row-grid-section"><div class="vc_row wpb_row vc_inner vc_row-fluid edgtf-content-aligment-center"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="edgtf-section-title-holder" style="padding: 0 22%">
+  <h3 class="edgtf-st-title" style="text-align: center;">
+  <span>Get in touch</span>
+</h3>
+    <p class="edgtf-st-text" style="color: #666666;font-size: 16px;line-height: 30px;margin-top: 21px; text-align: center;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+</div><div class="vc_empty_space" style="height: 57px"><span class="vc_empty_space_inner"></span></div></div></div></div></div></div></div></div></div></div>
+	
+<!--Stay in touch------------------------------------------------------------------------------------------------------------------>
+
+<div class="container-maxx">
+  <!-- Column 1 -->
+  <div class="column-maxx">
+    <div class="stay-tx"><h6 style="font-size: 20px; font-weight: normal;">Stay in touch</h6>
+      <p style="font-size: 14px; line-height: 1px; font-weight: 300; margin: 0; padding-top: 15px;">Updates for App</p>
+    </div>
+  </div>
+
+  <!-- Column 2 -->
+  <div class="column-maxx">
+    
+    <form class="subscribe-form">
+      <input type="email" placeholder="Your Email Address">
+      <button type="submit">Go</button>
+    </form>
+
+  </div>
+  <!-- Column 3 -->
+        
+        
+  <div class="column-maxx" id="follow">
+    <div class="follow-us-container3">
+      <span style="font-weight: normal">Follow Us:</span>
+    <div class="social-icons">
+      <a itemprop="url" class="" href="https://twitter.com/QodeInteractive" target="_self">
+        <i class="fab fa-twitter"></i>
+        <a itemprop="url" class="" href="https://vimeo.com/" target="_self">
+          <i class="fab fa-vimeo"></i>
+          <a itemprop="url" class="" href="https://www.facebook.com/QodeInteractive/" target="_self">
+            <i class="fab fa-facebook"></i>
+            <a itemprop="url" class="" href="https://plus.google.com/explore" target="_self">
+              <i class="fab fa-google-plus-g"></i>                    </a>
+      </div>
+    </div>
+    <p style="font-size: 14px; line-height: 1px; font-weight: 300; margin: 0; padding-top: 20px;">We want to hear from you!</p>
+  </div>
+
+
+  <!-- Column 4 -->
+  <div class="column-maxx">
+    <div class="wpb_text_column wpb_content_element">
+      <div class="wpb_wrapper">
+        <h6 class="stay-tx" style="font-weight: normal;">Call Us: <span style="font-weight: 300; color: rgba(249, 154, 20, 0.954);">00 34 938 60 24</span></h6>
+          <p style="font-size: 14px; line-height: 1px; font-weight: 300; padding-left: 42px;">Get updates for new amazing App</p>
+  
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Footer----------------------------------------------------------------------------------------------------------------->
+
+<footer class="footer">
+  <div class="footer-section">
+      <img src="\maxxcam\images\Maxlogo.png" alt="MaxxCAM Logo" width="50" style="height: 100px; width: 100px; margin: 0px 0px 30px 40px;">
+      <p class="company-desc">MaxxCAM revolutionizes sheet metal CAD/CAM, optimizing laser, plasma, and water-jet cutting machines with its advanced Cut Module.</p>
+  </div>
+  <div class="footer-section products">
+      <h3 class="fnt-fd" style="margin-left: 15px;">Products</h3>
+      <ul class="lst-odr" style="list-style-type: none; margin-left: -20px;">
+        <a href="#" class="product-lst-odrd"><li class="products-lst-odr">Profile Cam</li></a>
+          <a href="#" class="product-lst-odrd"><li class="products-lst-odr">Punch Cam</li></a>
+          <a href="#" class="product-lst-odrd"><li class="products-lst-odr">2D CAD</li></a>
+          <a href="#" class="product-lst-odrd"><li class="products-lst-odr">Auto Nesting</li></a>
+          <a href="#" class="product-lst-odrd"><li class="products-lst-odr">Right Angle Shear</li></a>
+          <a href="#" class="product-lst-odrd"><li class="products-lst-odr">Composite Cutting</li></a>
+      </ul>
+  </div>
+  <div class="footer-section contact-info">
+      <h3 class="fnt-fd">Contact Us</h3>
+      <div class="cnt-ph"><p><strong>Phone:</strong> +45 56 87 10 80</p>
+      <p><strong>Mail:</strong> <a href="mailto:info@maxxcam.com" style="color: #ccc;">info@maxxcam.com</a></p></div>
+  </div>
+  <div class="footer-section">
+      <h3 class="fnt-fd" style="padding-bottom: 20px;">Follow Us</h3>
+      <div class="social-icons1">
+          <a href="#" class="products-lst-odr"><i class="fab fa-twitter"></i> Twitter</a>
+          <a href="#" class="products-lst-odr"><i class="fab fa-google-plus-g"></i> Google Plus</a>
+          <a href="#" class="products-lst-odr"><i class="fab fa-facebook"></i> Facebook</a>
+          <a href="#" class="products-lst-odr"><i class="fab fa-vimeo"></i> Vimeo</a>
+          <a href="#" class="products-lst-odr"><i class="fab fa-pinterest"></i> Pinterest</a>
+      </div>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>Copyright Edge Themes. All Rights Reserved</span>
+  <a href="#" class="lst-ft">Learn About Fluid theme</a>
+  <a href="#" id="home"><div class="scroll-up">▲</div></a>
+</div>
+</body>
+</html>
+
