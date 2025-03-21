@@ -414,7 +414,7 @@ nav{
   .support-button {
     padding: 8px 15px;
     font-size: 12px;
-    margin-left: 350px;
+    margin-left: 35px;
   }
   
   
@@ -494,8 +494,8 @@ nav{
     font-size: 9px;
    margin-right: 10px;
    padding: 6px 12px;
-    margin-top: 20px;
-    margin-left: 60px;
+    margin-top: 18px;
+    margin-left: 55px;
   }
  
   
@@ -1810,9 +1810,9 @@ div .slider2{
 
 @media (max-width: 480px) {
   #view-btn {
-    width: 100%;
-    padding: 12px;
-    font-size: 14px;
+    width: 60%;
+    padding: 10px;
+    font-size: 10px;
   }
 }
 
@@ -2103,10 +2103,7 @@ cursor: pointer;
 
 @media (min-width: 480px) {
 
- h2 .sav_cal{
-    width: 200%;
-    display: flex;
-  }
+ 
 
 .col-slider-sec {
   display: flex;
@@ -2140,8 +2137,9 @@ cursor: pointer;
  
   .sav_cal{
     width: 100%;
-    
-   
+    font-size: 18px;
+    font-weight: bold;
+   margin: 0px 0px -100px 0px;
     
   }
   #setex {
@@ -2151,6 +2149,11 @@ cursor: pointer;
   .setex-str {
     font-size: 14px;
     word-spacing: 2px;
+  }
+
+ .section .calculate-button{
+font-size: 10px;
+width: 100%;
   }
 }
 
@@ -2205,6 +2208,9 @@ cursor: pointer;
   
   .subscribe-form input[type="email"] {
     width: 100%;
+  }
+ .saving-calculator-cont #setex{
+    margin-top: -90px;
   }
 }
 
@@ -2507,7 +2513,7 @@ margin-left: -60px;
   }
   
   .subscribe-form input[type="email"] {
-    width: 100%;
+    width: 60%;
   }
 }
 
