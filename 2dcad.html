@@ -51,8 +51,28 @@
           <div class="sidebar" id="sidebar">
             <span class="close-btn" onclick="toggleSidebar()">✖</span>
             <img src="Maxlogo.png" alt="MaxxCAM Logo" width="50">
-            <hr>
-            <ul>
+            <hr class="hr1">
+    
+            <ul class="nav-links-sd">
+              <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+              <li class="product-dropdown">
+                <a href="#" class="menu-item product-menu" onclick="toggleProductDropdown()" style="font-size: 14px;"><i class="fas fa-box"></i> Products ▼</a>
+                <ul class="product-dropdown-menu">
+                    <li><a href="2dcad.html">2D CAD</a></li>
+                      <li><a href="profilecam.html">Profile CAM</a></li>
+                        <li><a href="punchcam.html">Punch CAM</a></li>
+                          <li><a href="auto.html">Auto Nesting</a></li>
+                            <li><a href="punchshear.html">Punch/Shear CAM</a></li>
+                              <li><a href="quote.html">Quote Module</a></li>
+                </ul>
+            </li>
+              <li><a href="partners.html" class="nav-link"><i class="fas fa-handshake"></i> Partner</a></li>
+              <li><a href="resellers.html" class="nav-link"><i class="fas fa-store"></i> Resellers</a></li>
+              <li><a href="contact..html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+          </ul>
+    
+          <hr class="hr2">
+          <ul class="social-links-sd">
                 <li><a href="#" class="products-lst-odr"><i class="fab fa-twitter"></i> Twitter</a></li>
                  <li><a href="#" class="products-lst-odr"><i class="fab fa-google-plus-g"></i> Google Plus</a></li>
                   <li><a href="#" class="products-lst-odr"><i class="fab fa-facebook"></i> Facebook</a></li>
@@ -60,13 +80,19 @@
                   <li><a href="#" class="products-lst-odr"><i class="fab fa-pinterest"></i> Pinterest</a></li>
                 </ul>
           </div>
-          
+    
           <script>
             function toggleSidebar() {
                 let sidebar = document.getElementById("sidebar");
                 sidebar.classList.toggle("active");
             }
-          </script>
+            
+            function toggleProductDropdown() {
+                let dropdown = document.querySelector(".product-dropdown-menu");
+                dropdown.classList.toggle("show");
+            }
+        </script>
+        
            <div class="banner">
             
             <div class="banner-overlay"></div>
